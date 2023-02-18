@@ -2,7 +2,7 @@ const validaciones = {
     name: (value)=>{
         const valor = (/^[A-Za-z]{4,}$/.test(value))
         if(!valor){
-            return 'El nombre debe contener al menos 4 caracteres o mas'
+            return 'El nombre debe contener al menos 4 caracteres o mas y sin caracteres especiales'
         }
 
         return null
@@ -16,9 +16,9 @@ const validaciones = {
         return null
     },
     password: (value) =>{
-        const valor = (/^[A-Za-z0-9]{6,}$/.test(value))
+        const valor = (/^\S{6,}$/.test(value))
         if (!valor) {
-            return 'La contraseña debe contener al menos 6 caracteres o mas'
+            return 'La contraseña debe contener al menos 6 caracteres o mas y sin espacios'
         }
 
         return null
